@@ -110,11 +110,13 @@ Rails.application.routes.draw do
         end
       end
 
-      resources :suggestion do
-        collection do
+      resources :suggestions do
+        member do
           post :add_comment
           post :approve
           post :reject
+          get :show
+          patch :update
         end
       end
     end
